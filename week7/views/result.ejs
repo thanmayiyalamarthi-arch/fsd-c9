@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+
+<% if (success) { %>
+
+    <h1>Registration Successful</h1>
+
+    <p>
+        Welcome <%= username %>! Your account is ready.
+    </p>
+
+    <a href="/">Go Back</a>
+
+<% } else { %>
+
+    <h1>Registration Failed</h1>
+
+    <p>
+        <b><%= message %></b>
+    </p>
+
+    <form action="/register" method="POST">
+
+        <label>Username:</label>
+        <br>
+        <input type="text" name="username" value="<%= username %>">
+
+        <br><br>
+
+        <label>Age:</label>
+        <br>
+        <input type="number" name="age" value="<%= age %>">
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+<% } %>
+
+</body>
+</html>
